@@ -1,7 +1,7 @@
 {
   "name": "es-identifier-highlight",
   "main": "./lib/bootstrap.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A short description of your package",
   "keywords": [],
   "repository": "https://github.com/atom/es-identifier-highlight",
