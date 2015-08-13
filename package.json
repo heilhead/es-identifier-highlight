@@ -1,0 +1,27 @@
+{
+  "name": "es-identifier-highlight",
+  "main": "./lib/bootstrap.js",
+  "version": "0.0.1",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/atom/es-identifier-highlight",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "consumedServices": {
+    "minimap": {
+      "versions": {
+        "1.0.0": "consumeMinimapServiceV1"
+      }
+    }
+  },
+  "dependencies": {
+    "acorn": "^2.0.1",
+    "acorn-jsx": "^2.0.0",
+    "classnames": "^2.0.0",
+    "lodash.assign": "^3.2.0",
+    "lodash.debounce": "^3.1.1",
+    "loophole": "^1.1.0"
+  }
+}

@@ -1,0 +1,70 @@
+@import "ui-variables";
+@import "syntax-variables";
+
+// Text editor styles
+:host, atom-text-editor, atom-text-editor::shadow {
+  atom-text-editor .highlight.es-identifier-highlight .region {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .highlights {
+    .es-identifier-highlight .region {
+      box-sizing: border-box;
+    }
+
+    // Default theme
+    .es-identifier-highlight .region {
+      background-color: #344134;
+    }
+
+    .es-identifier-highlight.definition .region {
+      background-color: #40332b;
+    }
+
+    // Light theme
+    .es-identifier-highlight.light-theme .region {
+      background-color: #e4e4ff;
+    }
+
+    .es-identifier-highlight.light-theme.definition .region {
+      background-color: #ffe4ff;
+    }
+  }
+}
+
+// Minimap styles
+.minimap {
+  // Default theme
+  .es-identifier-highlight {
+    background-color: @text-color-highlight;
+    border:1px solid #ddd;
+  }
+
+  .es-identifier-highlight.line {
+    background-color: #036b13;
+    border:none;
+  }
+
+  .es-identifier-highlight.line.definition {
+    background-color: #b56277;
+    border:none;
+  }
+
+  // Light theme
+  .es-identifier-highlight.light-theme {
+    background-color: @text-color-highlight;
+    border:1px solid #ddd;
+  }
+
+  .es-identifier-highlight.light-theme.line {
+    background-color: #f0adf0;
+    border:none;
+  }
+
+  .es-identifier-highlight.light-theme.line.definition {
+    background-color: #baa8ff;
+    border:none;
+  }
+}
