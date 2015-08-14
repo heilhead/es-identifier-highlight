@@ -1,6 +1,7 @@
 'use babel';
 
 import fs from 'fs';
+import path from 'path';
 
 function getMarkerLength(id) {
     // marker format is /*#1*/
@@ -8,8 +9,8 @@ function getMarkerLength(id) {
 }
 
 export default {
-    getSource(path) {
-        return fs.readFileSync(path, 'utf-8');
+    getSource(filename) {
+        return fs.readFileSync(path.join(__dirname, '../', filename), 'utf-8');
     },
 
     getMarkers(src) {
