@@ -12,24 +12,25 @@
   .highlights {
     .es-identifier-highlight .region {
       box-sizing: border-box;
+      z-index:-2;
     }
 
     // Default theme
     .es-identifier-highlight .region {
-      background-color: #344134;
+      background-color: fade(#344134, 80%);
     }
 
     .es-identifier-highlight.definition .region {
-      background-color: #40332b;
+      background-color: fade(#40332b, 80%);
     }
 
     // Light theme
     .es-identifier-highlight.light-theme .region {
-      background-color: #e4e4ff;
+      background-color: fade(#e4e4ff, 80%);
     }
 
     .es-identifier-highlight.light-theme.definition .region {
-      background-color: #ffe4ff;
+      background-color: fade(#ffe4ff, 80%);
     }
   }
 }
@@ -43,28 +44,28 @@
   }
 
   .es-identifier-highlight.line {
-    background-color: #036b13;
+    background-color: fade(#036b13, 80%);
     border:none;
   }
 
   .es-identifier-highlight.line.definition {
-    background-color: #b56277;
+    background-color: fade(#b56277, 80%);
     border:none;
   }
 
   // Light theme
   .es-identifier-highlight.light-theme {
-    background-color: @text-color-highlight;
-    border:1px solid #ddd;
+    background-color: fade(#000, 80%);
+    border:1px solid #333;
   }
 
   .es-identifier-highlight.light-theme.line {
-    background-color: #f0adf0;
+    background-color: fade(#f0adf0, 80%);;
     border:none;
   }
 
   .es-identifier-highlight.light-theme.line.definition {
-    background-color: #baa8ff;
+    background-color: fade(#baa8ff, 80%);
     border:none;
   }
 }

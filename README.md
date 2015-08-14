@@ -1,14 +1,16 @@
 # ES Identifier Highlight
 
-Identifier highlight for JS/ES6/JSX heavily inspired by WebStorm's code highlight and inspection.
+Atom plugin for JS/ES6/JSX identifier highlighting. Heavily inspired by WebStorm's code highlight and inspection.
 
 ![A screenshot](http://i.imgur.com/18avdoZ.gif)
 
 ### Current Features
 * Proper scope inspection
 * Global variables detection
+* Shows variable definition
 * ES6 support
 * JSX support
+* Light theme support (see Settings)
 
 ### Future Plans
 * Support for properties
