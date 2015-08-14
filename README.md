@@ -1,4 +1,5 @@
 # ES Identifier Highlight
+[![Build Status](https://travis-ci.org/heilhead/es-identifier-highlight.svg?branch=master)](https://travis-ci.org/heilhead/es-identifier-highlight)
 [![Code Climate](https://codeclimate.com/github/heilhead/es-identifier-highlight/badges/gpa.svg)](https://codeclimate.com/github/heilhead/es-identifier-highlight)
 
 Atom plugin for JS/ES6/JSX identifier highlighting. Heavily inspired by WebStorm's code highlight and inspection.
