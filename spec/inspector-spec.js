@@ -28,7 +28,7 @@ describe('Inspector checks', () => {
 
         let ins = new Inspector();
 
-        it('parses es6 code', () => {
+        it('parses sample code', () => {
             expect(ins.parse(src)).toBe(true);
         });
 
@@ -209,5 +209,82 @@ describe('Inspector checks', () => {
 
     describe('jsx', () => {
         let src = utils.getSource('./samples/jsx.js');
+
+        // @todo jsx tests!
+        it('needs more jsx tests!', () => {
+            expect(true).toBe(true);
+        });
+    });
+
+    describe('literals, properties and class methods', () => {
+        let src = utils.getSource('./samples/literals.js');
+        let markers = utils.getMarkers(src);
+
+        let ins = new Inspector();
+
+        it('parses sample code', () => {
+            expect(ins.parse(src)).toBe(true);
+        });
+
+        it('finds properties and literals globally', () => {
+            // test1
+            let occ = ins.findOccurrences(markers[1]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(4);
+            expect(occ.usages[0].start).toBe(markers[1]);
+            expect(occ.usages[1].start).toBe(markers[4]);
+            expect(occ.usages[2].start).toBe(markers[17]);
+            expect(occ.usages[3].start).toBe(markers[19]);
+
+            // test2
+            occ = ins.findOccurrences(markers[2]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(3);
+            expect(occ.usages[0].start).toBe(markers[2]);
+            expect(occ.usages[1].start).toBe(markers[3]);
+            expect(occ.usages[2].start).toBe(markers[20]);
+        });
+
+        it('inspects nested objects', () => {
+            // test1
+            let occ = ins.findOccurrences(markers[6]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(2);
+            expect(occ.usages[0].start).toBe(markers[6]);
+            expect(occ.usages[1].start).toBe(markers[26]);
+
+            // test2
+            occ = ins.findOccurrences(markers[9]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(3);
+            expect(occ.usages[0].start).toBe(markers[9]);
+            expect(occ.usages[1].start).toBe(markers[21]);
+            expect(occ.usages[2].start).toBe(markers[23]);
+        });
+
+        it('inspects function properties', () => {
+            // test1
+            let occ = ins.findOccurrences(markers[7]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(2);
+            expect(occ.usages[0].start).toBe(markers[7]);
+            expect(occ.usages[1].start).toBe(markers[14]);
+        });
+
+        it('inspects class methods', () => {
+            // test1
+            let occ = ins.findOccurrences(markers[8]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(3);
+            expect(occ.usages[0].start).toBe(markers[8]);
+            expect(occ.usages[1].start).toBe(markers[15]);
+            expect(occ.usages[2].start).toBe(markers[18]);
+        });
     });
 });
