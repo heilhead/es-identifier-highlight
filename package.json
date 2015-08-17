@@ -1,7 +1,7 @@
 {
   "name": "es-identifier-highlight",
   "main": "./lib/bootstrap.js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "JS/ES6/JSX identifier highlighting",
   "keywords": [],
   "repository": "https://github.com/heilhead/es-identifier-highlight",
