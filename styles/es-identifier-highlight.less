@@ -2,6 +2,28 @@
 @import "syntax-variables";
 
 // Text editor styles
+.highlights() when (lightness(@syntax-background-color) > 50%) {
+  // Light theme
+  .es-identifier-highlight .region {
+    background-color: fade(#e4e4ff, 80%);
+  }
+
+  .es-identifier-highlight.definition .region {
+    background-color: fade(#ffe4ff, 80%);
+  }
+}
+
+.highlights() when (lightness(@syntax-background-color) <= 50%) {
+  // Default theme
+  .es-identifier-highlight .region {
+    background-color: fade(#344134, 80%);
+  }
+
+  .es-identifier-highlight.definition .region {
+    background-color: fade(#40332b, 80%);
+  }
+}
+
 :host, atom-text-editor, atom-text-editor::shadow {
   atom-text-editor .highlight.es-identifier-highlight .region {
     position: absolute;
@@ -14,45 +36,12 @@
       box-sizing: border-box;
       z-index:-2;
     }
-
-    // Default theme
-    .es-identifier-highlight .region {
-      background-color: fade(#344134, 80%);
-    }
-
-    .es-identifier-highlight.definition .region {
-      background-color: fade(#40332b, 80%);
-    }
-
-    // Light theme
-    .es-identifier-highlight.light-theme .region {
-      background-color: fade(#e4e4ff, 80%);
-    }
-
-    .es-identifier-highlight.light-theme.definition .region {
-      background-color: fade(#ffe4ff, 80%);
-    }
+    .highlights();
   }
 }
 
 // Minimap styles
-.minimap {
-  // Default theme
-  .es-identifier-highlight {
-    background-color: @text-color-highlight;
-    border:1px solid #ddd;
-  }
-
-  .es-identifier-highlight.line {
-    background-color: fade(#036b13, 80%);
-    border:none;
-  }
-
-  .es-identifier-highlight.line.definition {
-    background-color: fade(#b56277, 80%);
-    border:none;
-  }
-
+.minimap-highlights() when (lightness(@syntax-background-color) > 50%) {
   // Light theme
   .es-identifier-highlight.light-theme {
     background-color: fade(#000, 80%);
@@ -68,4 +57,26 @@
     background-color: fade(#baa8ff, 80%);
     border:none;
   }
+}
+
+.minimap-highlights() when (lightness(@syntax-background-color) <= 50%) {
+  // Default theme
+  .es-identifier-highlight {
+    background-color: @text-color-highlight;
+    border:1px solid #ddd;
+  }
+
+  .es-identifier-highlight.line {
+    background-color: fade(#036b13, 80%);
+    border:none;
+  }
+
+  .es-identifier-highlight.line.definition {
+    background-color: fade(#b56277, 80%);
+    border:none;
+  }
+}
+
+.minimap {
+  .minimap-highlights();
 }
