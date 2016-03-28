@@ -1,0 +1,5 @@
+'atom-text-editor':
+  'alt-r alt-r': 'es-identifier-highlight:renameIdentifier'
+  'shift-alt-left': 'es-identifier-highlight:prevIdentifier'
+  'shift-alt-right': 'es-identifier-highlight:nextIdentifier'
+  'shift-alt-up': 'es-identifier-highlight:jumpToDefinition'

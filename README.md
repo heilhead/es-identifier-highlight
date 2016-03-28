@@ -14,6 +14,8 @@ Atom plugin for JS/ES6/JSX identifier highlighting. Heavily inspired by WebStorm
 * ES6 support
 * JSX support
 * Light theme support (see Settings)
+* Jumping between occurrences (shift+alt+left and shift+alt+right)
+* Jump to declaration (shift+alt+up)
 
 ### Future Plans
 * Support for `this`

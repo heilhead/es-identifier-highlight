@@ -19,6 +19,7 @@
   "dependencies": {
     "acorn": "^2.0.1",
     "acorn-jsx": "^2.0.0",
+    "atom-space-pen-views": "^2.2.0",
     "classnames": "^2.0.0",
     "lodash.assign": "^3.2.0",
     "lodash.debounce": "^3.1.1",
