@@ -287,4 +287,52 @@ describe('Inspector checks', () => {
             expect(occ.usages[2].start).toBe(markers[18]);
         });
     });
+
+    describe('es-next features support', () => {
+        let src = utils.getSource('./samples/es-next-features.js');
+        let markers = utils.getMarkers(src);
+
+        let ins = new Inspector();
+
+        it('parses code', () => {
+            expect(ins.parse(src)).toBe(true);
+        });
+
+        it('supports class properties', () => {
+            let occ = ins.findOccurrences(markers[4]);
+
+            expect(occ.isLiteral).toBe(true);
+            expect(occ.usages.length).toBe(3);
+            expect(occ.usages[0].start).toBe(markers[5]);
+            expect(occ.usages[1].start).toBe(markers[4]);
+            expect(occ.usages[2].start).toBe(markers[7]);
+        });
+
+        it('supports spread properties', () => {
+            let occ = ins.findOccurrences(markers[9]);
+
+            expect(occ.isGlobal).toBe(false);
+            expect(occ.definition.start).toBe(markers[12]);
+            expect(occ.usages.length).toBe(1);
+            expect(occ.usages[0].start).toBe(markers[9]);
+        });
+    });
+
+    describe('shell script support', () => {
+        let src = utils.getSource('./samples/shellscript.js');
+        let markers = utils.getMarkers(src);
+
+        let ins = new Inspector();
+
+        it('supports hashbang', () => {
+            expect(ins.parse(src)).toBe(true);
+
+            let occ = ins.findOccurrences(markers[1]);
+
+            expect(occ.isGlobal).toBe(false);
+            expect(occ.definition.start).toBe(markers[1]);
+            expect(occ.usages.length).toBe(1);
+            expect(occ.usages[0].start).toBe(markers[2]);
+        });
+    });
 });
