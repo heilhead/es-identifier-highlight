@@ -316,6 +316,15 @@ describe('Inspector checks', () => {
             expect(occ.usages.length).toBe(1);
             expect(occ.usages[0].start).toBe(markers[9]);
         });
+
+        it('supports advanced spread syntax', () => {
+            let occ = ins.findOccurrences(markers[14]);
+
+            expect(occ.isGlobal).toBe(false);
+            expect(occ.definition.start).toBe(markers[13]);
+            expect(occ.usages.length).toBe(1);
+            expect(occ.usages[0].start).toBe(markers[14]);
+        });
     });
 
     describe('shell script support', () => {

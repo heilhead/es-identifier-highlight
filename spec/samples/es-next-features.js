@@ -13,3 +13,8 @@ const /*#12*/someObject = { /*#7*/foo: /*#8*/'bar' };
 
 // spread properties
 const anotherObject = { .../*#9*/someObject, /*#10*/prop: /*#11*/'randomMethod' };
+
+// more complicated spread
+const { className, childProps = {}, .../*#13*/optsRest } = anotherObject;
+
+/*#14*/optsRest.test;
