@@ -7,7 +7,7 @@ Atom plugin for JS/ES6/JSX identifier highlighting. Heavily inspired by WebStorm
 ![A screenshot](http://i.imgur.com/18avdoZ.gif)
 
 ### Current Features
-* Uses [babylon](https://github.com/babel/babylon) which brings support for all [babel](https://github.com/babel/babel) features
+* Uses [babylon](https://github.com/babel/babylon) which brings support for (almost) all of [babel](https://github.com/babel/babel) features
 * Proper scope inspection
 * Global variables detection
 * Shows variable definition
